@@ -13,7 +13,7 @@
 			<div id="intro-paragraph">
 				<p id="sentence-01">Hi, I am</p>
 				<p id="sentence-02">Ting Wei Jing</p>
-				<p id="sentence-03">Full Stack Software Engineer at MoneyLion</p>
+				<p id="sentence-03">Software Engineer at MoneyLion</p>
 			</div>
 		</div>
 		<div id="lower-content">
