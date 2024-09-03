@@ -4,6 +4,7 @@
 	import ProfilePic from '$lib/assets/profile_pic.png';
 	import LinkedinIcon from '$lib/assets/linkedin.svg';
 	import GithubIcon from '$lib/assets/github-mark-white.svg';
+	import MoneyLionIcon from '$lib/assets/moneylion.png';
 </script>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans" />
@@ -18,11 +19,53 @@
 		<p class="sentence-03">Software Engineer at MoneyLion</p>
 	</div>
 	<div class="sized-links">
-		<a href="https://www.linkedin.com/in/ting-wei-jing/" target="_blank" rel="noopener noreferrer">
+		<a href="https://www.linkedin.com/in/ting-wei-jing" target="_blank" rel="noopener noreferrer">
 			<img class="link-icon" src={LinkedinIcon} alt="LinkedIn Icon" />
 		</a>
 		<a href="https://github.com/TINGWEIJING" target="_blank" rel="noopener noreferrer">
 			<img class="link-icon" src={GithubIcon} alt="GitHub Icon" />
+		</a>
+	</div>
+</div>
+<div class="sized-project-gallery">
+	<div class="project-box">
+		<a
+			class="project-link"
+			href="https://tingweijing.github.io/MoneyLion-Tech-Talk-15-slide"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<div class="project-card">
+				<img class="project-icon" src={MoneyLionIcon} alt="MoneyLion Icon" />
+				<div class="project-description">
+					<p class="project-title">
+						<strong>MoneyLion Tech Talk #15</strong><br /><i
+							>Optimizing Performance: Tackling Thread Pool Exhaustion to Reduce Backend Latency</i
+						>
+					</p>
+				</div>
+			</div>
+		</a>
+	</div>
+	<div class="project-box">
+		<a
+			class="project-link"
+			href="https://marketplace.visualstudio.com/items?itemName=tingcode.bread-jam"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<div class="project-card">
+				<img
+					class="project-icon"
+					src="https://tingcode.gallerycdn.vsassets.io/extensions/tingcode/bread-jam/0.0.2/1717336190922/Microsoft.VisualStudio.Services.Icons.Default"
+					alt="MoneyLion Icon"
+				/>
+				<div class="project-description">
+					<p class="project-title">
+						<strong>VS Code Bread Jam</strong><br /><i>A Visual Studio Code extension</i>
+					</p>
+				</div>
+			</div>
 		</a>
 	</div>
 </div>
@@ -37,7 +80,6 @@
 		width: 100%;
 		max-width: 1000px;
 	}
-
 	.sized-profile-img {
 		grid-area: 1 / 1 / 10 / 5;
 		display: flex;
@@ -61,6 +103,61 @@
 		justify-content: space-evenly;
 		align-items: center;
 	}
+	.sized-project-gallery {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: stretch;
+		padding-top: 20px;
+
+		aspect-ratio: 600 / 100;
+		width: 100%;
+		max-width: 1000px;
+	}
+
+	.project-box {
+		width: 46%;
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+		border-radius: 8px;
+		background-color: rgb(56, 54, 54);
+	}
+	.project-link {
+		display: block;
+		height: 100%;
+		width: 100%;
+		text-decoration: none;
+	}
+	.project-card {
+		display: grid;
+		height: 100%;
+		width: 100%;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(1, 1fr);
+	}
+	.project-card > img {
+		grid-column: 1/3;
+	}
+	.project-icon {
+		object-fit: contain;
+		aspect-ratio: 1/1;
+		width: 80%;
+		height: auto;
+		margin: auto;
+	}
+	.project-description {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: start;
+		height: 100%;
+		grid-column: 3/7;
+		color: aliceblue;
+		padding-right: 20px;
+	}
+	.project-title {
+		font-size: var(--size-20);
+	}
+
 	.profic-img {
 		clip-path: circle();
 		object-fit: contain;
@@ -107,6 +204,23 @@
 			grid-area: 5 / 1 / 10 / 13;
 			align-items: center;
 		}
+		.sized-project-gallery {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			aspect-ratio: unset;
+			gap: 20px;
+		}
+		.project-box {
+			width: 90%;
+		}
+		.project-description {
+			padding: 10px;
+			height: fit-content;
+		}
+		.project-title {
+			font-size: var(--size-40);
+		}
 		.sentence-01 {
 			font-size: var(--size-50);
 		}
@@ -125,6 +239,9 @@
 	}
 
 	@media only screen and (min-width: 1000px) {
+		.project-title {
+			font-size: 0.4em;
+		}
 		.profic-img {
 			width: 84%;
 		}
